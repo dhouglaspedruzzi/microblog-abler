@@ -1,24 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Microblog desenvolvido para processo seletivo ABLER
 
-Things you may want to cover:
+### Back-end
+O desafio é criar um microblog em Ruby on Rails, assim como o Twitter. Pode ser uma aplicação monolítica ou API + front-end, fica a seu critério 😄
 
-* Ruby version
+#### O usuário LOGADO deve
+- [ ] Criar postagens
+- [ ] Ver as postagens criadas
+- [ ] Buscar por outros usuários
+- [ ] Visualizar o perfil de outros usuários com suas postagens
+- [ ] Seguir outro usuário
+- [ ] Receber notificação ao ser seguido por um usuário
+- [ ] Fazer logout
 
-* System dependencies
+#### O usuário NÃO LOGADO deve
+- [ ] Fazer login (email/senha, OAuth, passwordless como preferir)
+- [ ] Fazer seu cadsatro
+- [ ] Ver um perfil criado
+- [ ] Ver as postagens do perfil
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Vamos considerar os seguintes itens:
+- [ ] Layout bem feito
+- [ ] Código organizado
+- [ ] Deve publicar o projeto como publico no [Github](https://github.com/)
+- [ ] Deve disponibilizar o projeto no [Heroku](https://www.heroku.com/)
+- [ ] Diferencial: Testes
+- [ ] Diferencial: Organização do Git
