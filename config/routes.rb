@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :users, only: :create
   resources :posts, only: :create
+  get '/p/:user_url', to: 'profiles#profile', as: :profile
+
 end
