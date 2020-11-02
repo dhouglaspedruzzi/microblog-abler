@@ -1,0 +1,17 @@
+<div class="card horizontal">
+  <div class="card-stacked">
+    <div class="card-content">
+      <%= form_for :post, url: posts_path do |f| %>
+
+        <div class="input-field">
+          <%= f.label :text, 'O que você está pensando?' %>
+          <%= f.text_area :text, class: 'materialize-textarea', data: { length: 255  } %>
+        </div>
+
+        <div class="input-field">
+          <%= f.submit 'Enviar', class: 'btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

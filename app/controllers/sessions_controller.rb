@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     respond_to do |format|
       result = AutenticateUserService.new(login: login_params).call
       session[:user_id] = result.data.id.to_s if result.success?
-      format.html { redirect_to root_path, handle_message(result) }
+      format.html { redirect_to home_index_path, handle_message(result) }
     end
   end
 
