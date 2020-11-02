@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post :login, to: 'sessions#create', as: :login
 
   resources :users, only: :create
+  resources :posts, only: :create
 end
