@@ -1,0 +1,21 @@
+<div id="modal_signin" class="modal">
+  <div class="modal-content">
+    <h5>Entrar</h5>
+
+    <%= form_for :login, url: login_path do |f| %>
+      <div class="input-field">
+        <%= f.label :email %>
+        <%= f.text_field :email, autofocus: true %>
+      </div>
+
+      <div class="input-field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="input-field">
+        <%= f.submit "Entrar", class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -10,6 +10,29 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= notice if notice %>
+    <%= alert if alert %>
+
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">Microblog</a>
+        <ul class="right hide-on-med-and-down">
+
+          <% if current_user %>
+            <li>Olá <%= current_user.name %></li>
+            <li><%= link_to 'Clique para sair', logout_path %></li>
+          <% else %>
+            <li><a href="#modal_signin" class="modal-trigger">Entrar</a></li>
+            <li><a href="#modal_signup" class="modal-trigger">Cadastre-se</a></li>
+          <% end %>
+
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'modal_sign_in' %>
+    <%= render 'modal_sign_up' %>
   </body>
 </html>
