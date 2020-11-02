@@ -11,3 +11,6 @@ pt-BR:
         birth_date: Data de Nascimento
         password: Senha
         password_confirmation: Confirmação de Senha
+      post:
+        text: Postagem
+        user_id: Usuário
