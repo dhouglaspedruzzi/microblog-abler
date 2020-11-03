@@ -1,6 +1,6 @@
 $(function () {
     $('.notification-item').click(function () {
-        const notification_id = $(this).data('id'), element = $(this);
+        const notification_id = $(this).data('id');
 
         $.ajax({
             url: '/notifications/mark_as_read',
