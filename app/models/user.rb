@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :followers, class_name: 'Follower', foreign_key: :user_id
   has_many :users_followed, class_name: 'Follower', foreign_key: :follower_id
+  has_many :notifications
 
   has_one_attached :avatar
 
@@ -25,6 +26,10 @@ class User < ApplicationRecord
 
   def can_follow? user_to_follow_id
     id != user_to_follow_id.to_i
+  end
+
+  def number_notifications_uread
+    notifications.unread.count
   end
 
 end

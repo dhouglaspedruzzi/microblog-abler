@@ -12,6 +12,26 @@
 //= require jquery
 //= require jquery_ujs
 //= require activestorage
-//= require turbolinks
 //= require materialize-sprockets
 //= require_tree .
+
+function getCountNewNotifications () {
+    $.ajax({
+        url: '/notifications/get_new_count',
+        success: function (response) {
+            let span = $('#menu_notification_item').find('span.secondary-content');
+            span.html('');
+            span.removeClass('new badge');
+
+            if (response.status == 'success') {
+
+                if (response.count > 0) {
+                    span.html(response.count);
+                    span.addClass('new badge');
+                }
+            }
+        }
+    })
+}
+
+setInterval(getCountNewNotifications, 5000);

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_105149) do
+ActiveRecord::Schema.define(version: 2020_11_03_121157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 2020_11_03_105149) do
     t.index ["user_id"], name: "index_followers_on_user_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "message", limit: 255
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id"
     t.string "text", limit: 255
@@ -66,4 +75,5 @@ ActiveRecord::Schema.define(version: 2020_11_03_105149) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "notifications", "users"
 end
