@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: :create
 
   def create
     respond_to do |format|

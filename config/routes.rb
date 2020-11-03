@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  root 'explore#index'
   resources :home, only: :index
 
   resources :sessions, only: [:create, :destroy]

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorized, only: :create
+
   def create
     respond_to do |format|
       result = AutenticateUserService.new(login: login_params).call
