@@ -28,6 +28,10 @@ class User < ApplicationRecord
     id != user_to_follow_id.to_i
   end
 
+  def can_edit? user_to_follow_id
+    id == user_to_follow_id.to_i
+  end
+
   def number_notifications_uread
     notifications.unread.count
   end

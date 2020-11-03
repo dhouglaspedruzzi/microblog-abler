@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       result = UpdateUserService.new(user: user_params).call
-      format.html { redirect_to profile_path(result.data.url), handle_message(result) }
+      format.html { redirect_to profile_index_path(result.data.url), handle_message(result) }
     end
   end
 

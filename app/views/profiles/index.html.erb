@@ -1,0 +1,32 @@
+<div class="col s12 grey lighten-3 padding-20">
+  <div class="col s12 grey lighten-1 padding-20">
+    <div class="col s3">
+      <%= image_tag user_avatar_img(@user_profile), class: 'circle responsive-img' %>
+    </div>
+
+    <div class="col s6">
+      <h5><%= @user_profile.name %></h5>
+      <h6><%= user_url @user_profile %></h6>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum odio non viverra aliquet. Donec gravida nunc sollicitudin efficitur maximus. Nunc
+    </div>
+
+    <% if logged_in? %>
+      <div class="col s3">
+        <% if current_user.can_follow? @user_profile.id %>
+          <button id="btn_follow" class="btn right" data-user-to-follow-id="<%= @user_profile.id %>"><%= current_user.is_following?(@user_profile.id) ? 'Seguindo' : 'Seguir' %></button>
+        <% end %>
+
+        <% if current_user.can_edit? @user_profile.id %>
+          <button data-target="modal_editar" class="btn modal-trigger right">Editar</button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="col s12">
+  <h5>Postagens</h5>
+  <%= render 'posts/list', locals: { posts: @posts } %>
+</div>
+
+<%= render partial: 'modal_edit_profile', locals: { user: @user_profile } if logged_in? && current_user.can_edit?(@user_profile.id) %>

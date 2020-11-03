@@ -4,19 +4,17 @@
       <div class="card-content">
         <div class="row valign-wrapper">
           <div class="col s1">
-            <%= image_tag post.user.avatar, class: 'circle responsive-img' rescue nil %>
+            <%= image_tag user_avatar_img(post.user), class: 'circle responsive-img' %>
           </div>
-          <div class="col s11">
-            <span class="card-title">
-              <%= post.name %> <span class="card-label-email">p/<%= post.url %></span>
-            </span>
-            <span><%= post.created_at.strftime('%d/%m/%Y') %></span>
-          </div>
-        </div>
-        <div class="row valign-wrapper">
-          <div class="col s12">
+          <div class="col s8">
+            <h6>
+              <%= post.name %>
+              <span class="card-label-email grey-text"><%= link_to_user post, class: 'grey-text' %> | <%= date_formater post.created_at %></span>
+            </h6>
+            <hr>
             <p><%= post.text %></p>
           </div>
+          <div class="col s3"></div>
         </div>
       </div>
     </div>

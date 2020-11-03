@@ -1,9 +1,9 @@
 <ul class="collection">
   <% users.each do |user| %>
     <li class="collection-item avatar card-users-list-profile">
-      <%= image_tag user.avatar, class: 'circle responsive-img' rescue nil %>
+      <%= image_tag user_avatar_img(user), class: 'circle responsive-img' %>
       <span class="title"><%= user.name %></span><br>
-      <a href="p/<%= user.url %>">p/<%= user.url %></a>
+      <%= link_to_user user, class: 'grey-text' %>
     </li>
   <% end %>
 
