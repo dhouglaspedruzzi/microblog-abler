@@ -19,7 +19,7 @@ function getCountNewNotifications () {
     $.ajax({
         url: '/notifications/get_new_count',
         success: function (response) {
-            const span = $('#menu_notification_item').find('span.secondary-content');
+            var span = $('#menu_notification_item').find('span.secondary-content');
             span.html('');
             span.removeClass('new badge');
 

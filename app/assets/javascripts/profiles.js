@@ -1,6 +1,6 @@
 $(function () {
     $('#btn_follow').click(function () {
-        const user_to_follow_id = $(this).data('userToFollowId'), btn = $(this);
+        var user_to_follow_id = $(this).data('userToFollowId'), btn = $(this);
 
         $.ajax({
             url: '/followers/handle',
