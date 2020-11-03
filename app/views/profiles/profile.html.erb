@@ -1,12 +1,14 @@
-<div class="col s12 card-panel teal lighten-5" style="height: 400px">
-  <button data-target="modal_editar" class="btn modal-trigger">Editar</button>
+<% if current_user %>
+  <div class="col s12" style="height: 400px">
+    <button data-target="modal_editar" class="btn modal-trigger">Editar</button>
 
-  <% if current_user.can_follow? @user_profile.id %>
-    <button id="btn_follow" class="btn" data-user-to-follow-id="<%= @user_profile.id %>"><%= current_user.is_following?(@user_profile.id) ? 'Seguindo' : 'Seguir' %></button>
-  <% end %>
-</div>
+    <% if current_user.can_follow? @user_profile.id %>
+      <button id="btn_follow" class="btn" data-user-to-follow-id="<%= @user_profile.id %>"><%= current_user.is_following?(@user_profile.id) ? 'Seguindo' : 'Seguir' %></button>
+    <% end %>
+  </div>
+<% end %>
 
-<div class="col s12 card-panel teal lighten-5">
+<div class="col s12">
   <%= render 'posts/list', locals: { posts: @posts } %>
 </div>
 

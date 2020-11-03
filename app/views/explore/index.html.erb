@@ -1,0 +1,19 @@
+<div class="card horizontal">
+  <div class="card-stacked">
+    <div class="card-content">
+      <%= form_with url: search_explore_index_path, remote: true, method: :get do |f| %>
+
+        <div class="input-field">
+          <%= f.label :query, 'Quem você está buscando?' %>
+          <%= f.text_area :query, class: 'materialize-textarea', data: { length: 255  } %>
+        </div>
+
+        <div class="input-field">
+          <%= f.submit 'Buscar', class: 'btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="div_explore_search"></div>

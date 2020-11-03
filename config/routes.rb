@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :update]
   resources :posts, only: :create
   resources :notifications, only: :index
+  resources :explore, only: :index do
+    get :search, on: :collection
+  end
 
 
   get '/p/:user_url', to: 'profiles#profile', as: :profile
