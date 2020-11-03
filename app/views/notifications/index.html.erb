@@ -1,0 +1,11 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Notificações</h4></li>
+  <% @notifications.each do |notification| %>
+    <li class="collection-item notification-item" data-id="<%= notification.id %>">
+      <div>
+        <%= notification.message %>
+        <a href="#!" class="secondary-content"><i class="material-icons"><%= notification.read? ? 'mail' : 'mail_outline' %></i></a>
+      </div>
+    </li>
+  <% end %>
+</ul>

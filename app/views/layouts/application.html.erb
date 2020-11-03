@@ -30,6 +30,7 @@
     <div class="container">
       <div class="row">
         <div class="col s3 card-panel teal lighten-2">
+          <%= render partial: 'menu/list', locals: { user: current_user } %>
         </div>
         <div class="col s9">
           <%= yield %>

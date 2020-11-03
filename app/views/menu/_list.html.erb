@@ -1,0 +1,8 @@
+<div class="collection">
+  <%= link_to 'Página Inicial', home_index_path, class: 'collection-item' if user %>
+  <%= link_to 'Explorar', '#', class: 'collection-item' %>
+  <% show_notification = user&.number_notifications_uread.to_i > 0  %>
+  <% descrition = "Notificações" + content_tag(:span, "#{ user.number_notifications_uread if show_notification }", class: "secondary-content #{ 'new badge' if show_notification }", data: { 'badge-caption': 'nova(s)' }) %>
+  <%= link_to descrition.html_safe, notifications_path,  class: 'collection-item', id: :menu_notification_item if user %>
+  <%= link_to 'Perfil', profile_path(user.url), class: 'collection-item' if user %>
+</div>
