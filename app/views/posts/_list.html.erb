@@ -2,11 +2,22 @@
   <div class="card horizontal">
     <div class="card-stacked">
       <div class="card-content">
-        <span class="card-title">
-          <%= post.name %> <span class="card-label-email"><%= post.email %></span>
-        </span>
-        <hr>
-        <p><%= post.text %></p>
+        <div class="row valign-wrapper">
+          <div class="col s1">
+            <%= image_tag post.user.avatar, class: 'circle responsive-img' rescue nil %>
+          </div>
+          <div class="col s11">
+            <span class="card-title">
+              <%= post.name %> <span class="card-label-email">p/<%= post.url %></span>
+            </span>
+            <span><%= post.created_at.strftime('%d/%m/%Y') %></span>
+          </div>
+        </div>
+        <div class="row valign-wrapper">
+          <div class="col s12">
+            <p><%= post.text %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

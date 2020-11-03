@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get :logout, to: 'sessions#destroy', as: :logout
   post :login, to: 'sessions#create', as: :login
 
-  resources :users, only: :create
+  resources :users, only: [:create, :update]
   resources :posts, only: :create
   get '/p/:user_url', to: 'profiles#profile', as: :profile
+  get '/followers/handle', to: 'followers#handle', as: :handle
 
 end

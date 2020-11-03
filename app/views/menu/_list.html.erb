@@ -1,5 +1,6 @@
 <div class="collection">
   <%= link_to 'Página Inicial', home_index_path, class: 'collection-item' if user %>
   <%= link_to 'Explorar', '#', class: 'collection-item' %>
+  <%= link_to 'Notificações', '#',  class: 'collection-item' if user %>
   <%= link_to 'Perfil', profile_path(user.url), class: 'collection-item' if user %>
 </div>

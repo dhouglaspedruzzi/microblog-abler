@@ -7,10 +7,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      result = UpdateUserService.new(user: user_params).call
+      format.html { redirect_to profile_path(result.data.url), handle_message(result) }
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :birth_date, :email, :password, :password_confirmation)
+    params.require(:user).permit(:id, :name, :birth_date, :email, :password, :password_confirmation, :avatar)
   end
 
   def handle_message result
