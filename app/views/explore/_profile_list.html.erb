@@ -1,0 +1,15 @@
+<ul class="collection">
+  <% users.each do |user| %>
+    <li class="collection-item avatar card-users-list-profile">
+      <%= image_tag user.avatar, class: 'circle responsive-img' rescue nil %>
+      <span class="title"><%= user.name %></span><br>
+      <a href="p/<%= user.url %>">p/<%= user.url %></a>
+    </li>
+  <% end %>
+
+  <% if users.empty? %>
+    <li class="collection-item">
+      <span class="title">Não foi encontrado ninguém de acordo com sua busca</span>
+    </li>
+  <% end %>
+</ul>
