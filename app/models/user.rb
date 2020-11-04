@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :name, :birth_date, presence: true
   validates :email, presence: true, uniqueness: true
+  validates :bio, length: { maximum: 180 }
 
   has_many :posts
   has_many :followers, class_name: 'Follower', foreign_key: :user_id

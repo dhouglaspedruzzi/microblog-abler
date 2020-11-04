@@ -5,11 +5,11 @@
     <%= form_for :login, url: login_path do |f| %>
       <div class="input-field">
         <%= f.label :email %>
-        <%= f.text_field :email, autofocus: true %>
+        <%= f.text_field :email %>
       </div>
 
       <div class="input-field">
-        <%= f.label :password %>
+        <%= f.label :password, 'Senha' %>
         <%= f.password_field :password %>
       </div>
 

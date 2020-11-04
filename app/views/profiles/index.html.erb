@@ -7,7 +7,7 @@
     <div class="col s6">
       <h5><%= @user_profile.name %></h5>
       <h6><%= user_url @user_profile %></h6>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elementum odio non viverra aliquet. Donec gravida nunc sollicitudin efficitur maximus. Nunc
+      <p><%= @user_profile.bio %></p>
     </div>
 
     <% if logged_in? %>

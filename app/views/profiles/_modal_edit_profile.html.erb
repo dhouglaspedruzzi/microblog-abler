@@ -32,8 +32,18 @@
       </div>
 
       <div class="input-field">
-        <%= f.label :avatar %>
-        <%= f.file_field :avatar %>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, class: 'materialize-textarea', data: { length: 180  } %>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Imagem de Perfil</span>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
       </div>
 
       <div class="input-field">
