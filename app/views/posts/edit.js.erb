@@ -1,0 +1,5 @@
+$(function () {
+    $('#modal_content_edit_post').html('<%= j render(partial: 'posts/modal_content_edit_post', locals: { post: @post, controller_to_redirect: @controller_to_redirect }) %>');
+    $('#modal_edit_post').modal('open');
+    M.updateTextFields();
+});
