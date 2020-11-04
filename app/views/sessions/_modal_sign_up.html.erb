@@ -1,8 +1,9 @@
 <div id="modal_signup" class="modal">
   <div class="modal-content">
     <h5>Cadastre-se</h5>
+    <div class="notifications-panel"></div>
 
-    <%= form_for User.new do |f| %>
+    <%= form_for User.new, remote: true do |f| %>
 
       <div class="input-field">
         <%= f.label :name %>
@@ -26,7 +27,7 @@
 
       <div class="input-field">
         <%= f.label :birth_date %>
-        <%= f.date_field :birth_date, value: nil %>
+        <%= f.date_field :birth_date, value: Date.today %>
       </div>
 
       <div class="input-field">

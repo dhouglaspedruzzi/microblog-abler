@@ -1,0 +1,3 @@
+$(function() {
+    $(".notifications-panel:visible:last").html("<%= j render(partial: 'layouts/notifications', locals: { notifications: notifications, type: type }).html_safe %>");
+});

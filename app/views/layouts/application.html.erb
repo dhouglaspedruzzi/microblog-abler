@@ -10,12 +10,9 @@
   </head>
 
   <body class="grey lighten-5">
-    <%= notice if notice %>
-    <%= alert if alert %>
-
     <nav class="blue-grey lighten-1" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="javascript:void(0)" class="brand-logo">Microblog</a>
+        <a id="logo-container" href="javascript:void(0)" class="brand-logo">@Microblog</a>
         <ul class="right hide-on-med-and-down">
           <% if logged_in? %>
             <li>Olá <%= current_user.name %></li>
@@ -41,3 +38,11 @@
     <%= render 'sessions/modal_sign_up' %>
   </body>
 </html>
+
+<script>
+  $(function () {
+      <% if notice %>
+        M.toast({ html: '<%= j notice %>', classes: 'teal lighten-2' })
+      <% end %>
+  })
+</script>

@@ -1,8 +1,9 @@
 <div id="modal_editar" class="modal">
   <div class="modal-content">
     <h5>Editar Perfil</h5>
+    <div class="notifications-panel"></div>
 
-    <%= form_for user do |f| %>
+    <%= form_for user, remote: true do |f| %>
 
       <%= f.hidden_field :id %>
 

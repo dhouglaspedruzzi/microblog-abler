@@ -34,4 +34,4 @@ function getCountNewNotifications () {
     })
 }
 
-setInterval(getCountNewNotifications, 5000);
+setInterval(getCountNewNotifications, 15000);

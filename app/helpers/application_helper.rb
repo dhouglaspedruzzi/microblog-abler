@@ -16,4 +16,15 @@ module ApplicationHelper
     date.strftime('%d/%m/%Y %H:%M')
   end
 
+  def global_notifications type, message = ''
+    classes = 'green-text' if type == :success
+    classes = 'red-text' if type == :error
+
+    message = message.gsub("\n", '<br/>').to_s.html_safe if type == :error
+
+    content_tag(:div, class: classes, role: :alert) do
+      message
+    end
+  end
+
 end
