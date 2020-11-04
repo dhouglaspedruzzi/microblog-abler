@@ -8,7 +8,7 @@ class NotificationsController < ApplicationController
     result = MarkAsReadNotificationService.new(prepared_params[:notification_id]).call
 
     if result.success?
-      render json: { status: :success }
+      redirect notifications_path, notice: 'Lida'
     else
       render json: { status: :error, error: result.error }
     end

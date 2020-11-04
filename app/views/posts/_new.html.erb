@@ -1,7 +1,7 @@
 <div class="card horizontal">
   <div class="card-stacked">
     <div class="card-content">
-      <%= form_for :post, url: posts_path do |f| %>
+      <%= form_for :post, url: posts_path, remote: true do |f| %>
 
         <div class="input-field">
           <%= f.label :text, 'O que você está pensando?' %>

@@ -18,7 +18,7 @@ class UpdateUserService
   end
 
   def handle_result
-    return OpenStruct.new success?: false, error: @user.errors.full_messages.join(', ') if @user.errors.present?
+    return OpenStruct.new success?: false, error: @user.errors.full_messages.join("\n") if @user.errors.present?
     OpenStruct.new success?: true, data: @user
   end
 end

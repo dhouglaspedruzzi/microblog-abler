@@ -19,4 +19,15 @@ class ApplicationController < ActionController::Base
     redirect_to explore_index_path unless logged_in?
   end
 
+  def redirect path, options={}
+    flash[:notice] = options[:notice] if options[:notice]
+    flash[:alert] = options[:alert] if options[:alert]
+    render js: render_to_string(partial: 'layouts/redirect.js.erb', locals: { path: path })
+  end
+
+  def notify notifications, options={}
+    type = options[:type] || :error
+    render js: render_to_string(partial: 'layouts/notify', locals: { notifications: notifications, type: type })
+  end
+
 end

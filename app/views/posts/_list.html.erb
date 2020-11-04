@@ -20,3 +20,9 @@
     </div>
   </div>
 <% end %>
+
+<% if @posts.empty? %>
+  <ul class="collection">
+    <li class="collection-item">Nada de novo...</li>
+  </ul>
+<% end %>
