@@ -2,7 +2,9 @@
   <div class="col s12 grey lighten-1 padding-20">
     <div class="col s3">
       <%= image_tag user_avatar_img(@user_profile), class: 'circle responsive-img modal-trigger', data: { target: 'modal_edit_image_profile' } %>
-      <a class="modal-trigger  teal-text text-lighten-1" href="#modal_edit_image_profile">Editar imagem de Perfil</a>
+      <% if current_user.can_edit? @user_profile.id %>
+        <a class="modal-trigger  teal-text text-lighten-1" href="#modal_edit_image_profile">Editar imagem de Perfil</a>
+      <% end %>
     </div>
 
     <div class="col s6">
