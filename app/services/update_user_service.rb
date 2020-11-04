@@ -1,7 +1,7 @@
 class UpdateUserService
 
   def initialize params={}
-    @user_params = params[:user]
+    @user_params = params[:user].presence || {}
   end
 
   def call

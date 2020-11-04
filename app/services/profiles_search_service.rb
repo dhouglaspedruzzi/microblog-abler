@@ -10,7 +10,7 @@ class ProfilesSearchService
 
   def profiles
     query = User.select(:id, :name, :url)
-    query.where! 'name ilike :query OR url ilike :query', query: "%#{ @query }%"
+    query.where! 'name ilike :query OR url ilike :query', query: "%#{ @query }%" if @query
     query
   end
 

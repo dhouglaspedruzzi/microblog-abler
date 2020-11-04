@@ -16,7 +16,7 @@ class CreatePostService
   end
 
   def handle_result
-    return OpenStruct.new success?: false, error: @post.errors.full_messages.join(', ') if @post.errors.present?
+    return OpenStruct.new success?: false, error: @post.errors.full_messages.join("\n") if @post.errors.present?
     OpenStruct.new success?: true, data: @post
   end
 end

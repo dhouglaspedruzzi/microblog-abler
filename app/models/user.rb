@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :name, :birth_date, :url, presence: true
-  validates :email, presence: true, uniqueness: true
+  validates :name, :birth_date, presence: true
+  validates :email, :url, presence: true, uniqueness: true
   validates :bio, length: { maximum: 180 }
 
   has_many :posts

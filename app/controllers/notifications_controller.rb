@@ -1,4 +1,5 @@
 class NotificationsController < ApplicationController
+  protect_from_forgery except: :mark_as_read
 
   def index
     @notifications = NotificationService.new({ query: { user_id: current_user.id }, order: { id: :desc } }).call

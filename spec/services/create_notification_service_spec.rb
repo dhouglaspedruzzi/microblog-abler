@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe CreateNotificationService do
   before(:each) do
-    @user = User.create name: 'Pessoa', email: 'email@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456'
+    @user = User.create name: 'Pessoa', email: 'email@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456', url: 'url'
   end
 
   it 'should create' do
