@@ -22,6 +22,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_image
+    result = UpdateUserService.new(user: user_params).call
+    redirect_to profile_index_path(result.data.url), notice: 'Imagem salva com sucesso'
+  end
+
   private
 
   def user_params

@@ -1,7 +1,8 @@
 <div class="col s12 grey lighten-3 padding-20">
   <div class="col s12 grey lighten-1 padding-20">
     <div class="col s3">
-      <%= image_tag user_avatar_img(@user_profile), class: 'circle responsive-img' %>
+      <%= image_tag user_avatar_img(@user_profile), class: 'circle responsive-img modal-trigger', data: { target: 'modal_edit_image_profile' } %>
+      <a class="modal-trigger  teal-text text-lighten-1" href="#modal_edit_image_profile">Editar imagem de Perfil</a>
     </div>
 
     <div class="col s6">
@@ -17,7 +18,7 @@
         <% end %>
 
         <% if current_user.can_edit? @user_profile.id %>
-          <button data-target="modal_editar" class="btn modal-trigger right">Editar</button>
+          <button data-target="modal_edit_profile" class="btn modal-trigger right">Editar</button>
         <% end %>
       </div>
     <% end %>
@@ -29,4 +30,7 @@
   <%= render 'posts/list', locals: { posts: @posts } %>
 </div>
 
-<%= render partial: 'modal_edit_profile', locals: { user: @user_profile } if logged_in? && current_user.can_edit?(@user_profile.id) %>
+<% if logged_in? && current_user.can_edit?(@user_profile.id) %>
+  <%= render partial: 'modal_edit_profile', locals: { user: @user_profile }  %>
+  <%= render partial: 'modal_edit_image_profile', locals: { user: @user_profile } %>
+<% end %>

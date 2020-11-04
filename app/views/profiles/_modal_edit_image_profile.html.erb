@@ -1,0 +1,24 @@
+<div id="modal_edit_image_profile" class="modal">
+  <div class="modal-content">
+    <h6>Editar imagem de Perfil</h6>
+    <div class="notifications-panel"></div>
+
+    <%= form_for :user, url: { action: :update_image, controller: :users } do |f| %>
+      <%= f.hidden_field :id, value: user.id %>
+
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Selecione uma nova imagem</span>
+          <%= f.file_field :avatar %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+
+      <div class="input-field">
+        <%= f.submit 'Salvar', class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
