@@ -1,5 +1,5 @@
 <% @posts.each do |post| %>
-  <div class="card horizontal">
+  <div class="card horizontal" id="card_post_id_<%= post.id %>">
     <div class="card-stacked">
       <div class="card-content">
         <div class="row valign-wrapper">
@@ -14,7 +14,12 @@
             <hr>
             <p><%= post.text %></p>
           </div>
-          <div class="col s3"></div>
+          <div class="col s3">
+            <% if logged_in? && post.user_id == current_user.id %>
+              <%= link_to content_tag(:i, 'delete', class: 'material-icons').html_safe, post, method: :delete, data: { confirm: 'Tem certeza que deseja remover?' }, remote: true, class: 'remove-post right btn red' %>
+              <%= content_tag :button, content_tag(:i, 'edit', class: 'material-icons').html_safe, data: { post_id: post.id, controller_origin: params[:controller] }, class: 'btn modal-trigger-edit-post right' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -26,3 +31,5 @@
     <li class="collection-item">Nada de novo...</li>
   </ul>
 <% end %>
+
+<%= render 'posts/modal_edit_post' %>

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post :login, to: 'sessions#create', as: :login
 
   resources :users, only: [:create, :update]
-  resources :posts, only: :create
+  resources :posts, only: [:create, :edit, :update, :destroy]
   resources :notifications, only: :index
   resources :explore, only: :index do
     get :search, on: :collection

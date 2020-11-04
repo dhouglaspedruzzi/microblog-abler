@@ -1,0 +1,16 @@
+<%= form_for post, remote: true do |f| %>
+
+  <div class="notifications-panel"></div>
+
+  <%= f.hidden_field :id %>
+  <%= f.hidden_field :controller_to_redirect, value: controller_to_redirect %>
+
+  <div class="input-field">
+    <%= f.label :text, 'O que você está pensando?' %>
+    <%= f.text_area :text, class: 'materialize-textarea', data: { length: 255  }%>
+  </div>
+
+  <div class="input-field">
+    <%= f.submit 'Enviar', class: 'btn' %>
+  </div>
+<% end %>

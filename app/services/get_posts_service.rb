@@ -9,7 +9,7 @@ class GetPostsService
   end
 
   def posts
-    Post.select(:text, :user_id, 'posts.created_at', 'users.name', 'users.url').joins(:user).where(filter).order(created_at: :desc)
+    Post.select(:text, :user_id, 'posts.id', 'posts.created_at', 'users.name', 'users.url').joins(:user).where(filter).order(created_at: :desc)
   end
 
   def filter
