@@ -30,4 +30,8 @@ class ApplicationController < ActionController::Base
     render js: render_to_string(partial: 'layouts/notify', locals: { notifications: notifications, type: type })
   end
 
+  def redirect_not_found
+    redirect_to explore_index_path
+  end
+
 end
