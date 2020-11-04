@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  protect_from_forgery except: :create
 
   def create
     result = CreatePostService.new(post: post_params.merge(user_id: current_user&.id)).call

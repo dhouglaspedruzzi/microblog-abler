@@ -1,8 +1,8 @@
 class NotificationService
 
   def initialize params = {}
-    @query_params = params[:query].presence || {}
-    @order_params = params[:order].presence || {}
+    @query_params = params[:query].presence
+    @order_params = params[:order].presence
   end
 
   def call

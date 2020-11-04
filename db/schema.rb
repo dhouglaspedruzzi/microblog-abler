@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_11_04_001346) do
     t.string "url", limit: 255
     t.string "bio", limit: 180
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["url"], name: "index_users_on_url", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

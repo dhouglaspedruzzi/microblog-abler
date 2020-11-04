@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe FollowUserService do
   before(:each) do
-    @user = User.create name: 'Pessoa', email: 'email@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456'
-    @user_to_follow = User.create name: 'Pessoa', email: 'email2@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456'
+    @user = User.create name: 'Pessoa', email: 'email@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456', url: 'url'
+    @user_to_follow = User.create name: 'Pessoa', email: 'email2@gmail.com', birth_date: '01/07/1997'.to_date, password: '123456', url: 'url_2'
   end
 
   it 'should follow' do

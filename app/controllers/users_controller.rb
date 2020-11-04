@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: :create
+  protect_from_forgery except: :create
 
   def create
     result = CreateUserService.new(user: user_params).call

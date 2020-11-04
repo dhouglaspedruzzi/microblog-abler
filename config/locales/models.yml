@@ -4,6 +4,9 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      post:
+        one: Postagem
+        other: Postagens
     attributes:
       user:
         name: Nome
@@ -14,3 +17,9 @@ pt-BR:
       post:
         text: Postagem
         user_id: Usuário
+      notification:
+        user_id: Usuário
+        message: Mensagem
+      follower:
+        user_id: Usuário
+        follower_id: Seguidor
